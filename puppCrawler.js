@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const { IncomingWebhook } = require("@slack/webhook");
 
-const webhook = new IncomingWebhook("https://hooks.slack.com/services/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");
+const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
 
 const notifySlack = async (text) => {
   await webhook.send({
